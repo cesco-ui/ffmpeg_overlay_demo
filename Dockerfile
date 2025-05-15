@@ -1,7 +1,7 @@
-FROM jrottenberg/ffmpeg:4.4-alpine
+FROM jrottenberg/ffmpeg:4.4-ubuntu
 
-# Copy overlay image to the container (adjust name if needed)
-COPY TAILWAGGER\ TV.png /overlay.png
+# Copy the overlay image into the container
+COPY overlay.png /overlay.png
 
-# Default command (can be overridden by API/n8n)
-CMD ["ffmpeg", "-version"]
+# Use ffmpeg as the default command
+ENTRYPOINT ["ffmpeg"]
